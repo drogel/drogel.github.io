@@ -5,15 +5,15 @@ const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "index.html": "fe2b9f8670e71fe0c2b6cb24ab17ce16",
 "/": "fe2b9f8670e71fe0c2b6cb24ab17ce16",
-"main.dart.js": "c0de4b5f7384da2a3752c7b474870560",
-"favicon.png": "eaa4ab931235f75e3da2b291ac412782",
-"icons/Icon-192.png": "a488c97da8aa2a2c60ef82930fa6fb21",
-"icons/Icon-512.png": "c540c3c79331c45e2d055005cdd4b74f",
+"main.dart.js": "78bc2b520e51d4f2e0c63e27b01a2a73",
+"favicon.png": "e08adea7656d6ebd987fe42d62bcb75c",
+"icons/Icon-192.png": "a7d5670f12c12bb7a843ab8c6af10cf4",
+"icons/Icon-512.png": "34861847f7547bceba93a7962b3086e3",
 "manifest.json": "f8cf68546a656247f71c4fa9c0466662",
-"assets/AssetManifest.json": "1529b6e0cfbb15344ec6979fac292edc",
-"assets/NOTICES": "cfafcfc605fde43afced68cde96bbde0",
-"assets/FontManifest.json": "a672f412921bb996d6e450988a6d1c45",
-"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "115e937bb829a890521f72d2e664b632",
+"assets/AssetManifest.json": "efa3b9e706c2a08bf8a6116b93a06351",
+"assets/NOTICES": "f877ccf561770903ab4dd9574fd809cd",
+"assets/FontManifest.json": "7a2ec7360d455b6bf765049608806c88",
+"assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
 "assets/lib/resources/mock_data/sample_color_names.json": "e242dd7401bef244692ed8cef3b636d7",
 "assets/lib/resources/mock_data/sample_color.json": "43778ae3420b2fe0e33fb08142ecaf23",
 "assets/lib/resources/graphics/2.0x/logo.png": "05fe69a36315115a27120e4e5a5c579f",
@@ -27,10 +27,12 @@ const RESOURCES = {
 "assets/lib/resources/fonts/montserrat/Montserrat-Black.ttf": "27e3649bab7c62fa21b8837c4842e40e",
 "assets/lib/resources/fonts/montserrat/Montserrat-Regular.ttf": "ee6539921d713482b8ccd4d0d23961bb",
 "assets/lib/resources/fonts/montserrat/Montserrat-Italic.ttf": "a7063e0c0f0cb546ad45e9e24b27bd3b",
-"assets/lib/resources/data/palettes.json": "d766315a405fc80bd9409e03be2ff62e",
-"assets/lib/resources/data/color_names.json": "cb8e115ebbc1ec1b1ec4b70ccde1b151",
+"assets/lib/resources/data/palettes.json": "951383bf892a805648d241d1f675d8b4",
+"assets/lib/resources/data/palette_suggestions.json": "aa4359213314d015ebf8c41e24e4226d",
 "assets/lib/resources/data/color_suggestions.json": "a0a0dfbee449db9d73ec07de4630cf98",
-"assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16"
+"assets/lib/resources/data/colors.json": "46fc7a9041e62b787e98a8b6f01cd0c2",
+"assets/lib/resources/data/palettes_suggestions.json": "a2147dba5e1689b3dad020a60e37d07b",
+"assets/fonts/MaterialIcons-Regular.otf": "a68d2a28c526b3b070aefca4bac93d25"
 };
 
 // The application shell files that are downloaded before a service worker can
@@ -47,8 +49,8 @@ const CORE = [
 self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
-      // Provide a no-cache param to ensure the latest version is downloaded.
-      return cache.addAll(CORE.map((value) => new Request(value, {'cache': 'no-cache'})));
+      // Provide a 'reload' param to ensure the latest version is downloaded.
+      return cache.addAll(CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
@@ -131,7 +133,7 @@ self.addEventListener("fetch", (event) => {
         // Either respond with the cached resource, or perform a fetch and
         // lazily populate the cache. Ensure the resources are not cached
         // by the browser for longer than the service worker expects.
-        var modifiedRequest = new Request(event.request, {'cache': 'no-cache'});
+        var modifiedRequest = new Request(event.request, {'cache': 'reload'});
         return response || fetch(modifiedRequest).then((response) => {
           cache.put(event.request, response.clone());
           return response;
