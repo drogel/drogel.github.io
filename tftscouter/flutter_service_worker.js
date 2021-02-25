@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "8e7e5df80d3df0c0ce2570e42918204d",
+  "assets/AssetManifest.json": "5f559027b57f6376fdadb5691a506f39",
 "assets/FontManifest.json": "f6def487b96acfb0e7691254aabb562a",
 "assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
 "assets/lib/resources/fonts/helvetica_now_display/HelveticaNowDisplay-Black.ttf": "99a77728693c0462c00ad5df4cf8ded1",
@@ -11,15 +11,17 @@ const RESOURCES = {
 "assets/lib/resources/fonts/helvetica_now_display/HelveticaNowDisplay-Light.ttf": "ce18e2a4bc012949bc0069a358f3339b",
 "assets/lib/resources/fonts/helvetica_now_display/HelveticaNowDisplay-RegIta.ttf": "83e1526fead2e24b2045de9fbbed240c",
 "assets/lib/resources/fonts/helvetica_now_display/HelveticaNowDisplay-Regular.ttf": "9632144b89660f0f032a3a0a01e533c7",
-"assets/lib/resources/graphics/image.jpg": "e46f09cd6d99dfbd6ad7ec5194a69876",
-"assets/NOTICES": "ca9d6731185ebcbb83f07ce2b172863e",
+"assets/lib/resources/graphics/2.0x/github_light.png": "eb94bb97c3410733ce017b184d314723",
+"assets/lib/resources/graphics/3.0x/github_light.png": "472739dfb5857b1f659f4c4c6b4568d0",
+"assets/lib/resources/graphics/github_light.png": "d56df49a807a9fd06eb1667a84d3810e",
+"assets/NOTICES": "1c94b1acba32a19853d8039493b4dae1",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "b14fcf3ee94e3ace300b192e9e7c8c5d",
 "favicon.png": "e50e6acc6959716b539be499b6b64cf8",
 "icons/Icon-192.png": "c472272b667064a143e2fd373bc5908f",
 "icons/Icon-512.png": "ba7317ba9e0c2583449c231487db0327",
-"index.html": "87d5313a7be1b331c05482d617049668",
-"/": "87d5313a7be1b331c05482d617049668",
-"main.dart.js": "955e1ee2b9ba3eef89c1aff4e0d81757",
+"index.html": "8ced40e20f75d8e8464c68026889969c",
+"/": "8ced40e20f75d8e8464c68026889969c",
+"main.dart.js": "a61b5fa65060538d7fa1db0392a57ee1",
 "manifest.json": "2260f445418e23518928cec0c03dcea6",
 "version.json": "86147f703b285337aaed5c1c6971e6ed"
 };
